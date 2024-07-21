@@ -1,3 +1,10 @@
-import {CounterProvider} from '@/src/features/newCounter';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
-export const providerConfig = [CounterProvider];
+import {CounterProvider} from '@/src/features/counter';
+
+const queryClient = new QueryClient();
+
+export const providerConfig = [
+    CounterProvider,
+    [QueryClientProvider, {client: queryClient}],
+];

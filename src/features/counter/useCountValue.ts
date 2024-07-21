@@ -1,4 +1,4 @@
-import {useSelector} from '@/src/newState';
+import {useSelector} from '@/src/state';
 
 import {Context} from './Context';
 import type {State, Action} from './Reducer';

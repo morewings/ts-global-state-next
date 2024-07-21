@@ -2,15 +2,15 @@ import React from 'react';
 import {render, fireEvent} from '@testing-library/react';
 
 import {CounterProvider, CounterActions} from '@/src/features/counter';
-import * as newState from '@/src/newState';
+import * as newState from '@/src/state';
 
 import {Counter} from './Counter';
 
 const dispatchMock = jest.fn();
 
-jest.mock('@/src/newState', () => ({
+jest.mock('@/src/state', () => ({
     __esModule: true,
-    ...jest.requireActual('@/src/newState'),
+    ...jest.requireActual('@/src/state'),
 }));
 
 jest.spyOn(newState, 'useDispatch').mockReturnValue(dispatchMock);

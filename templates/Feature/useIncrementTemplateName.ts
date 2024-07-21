@@ -1,6 +1,6 @@
 import {useCallback} from 'react';
 
-import {useDispatch} from '@/src/newState';
+import {useDispatch} from '@/src/state';
 
 import {Context} from './Context';
 import {useTemplateNameValue} from './useTemplateNameValue';

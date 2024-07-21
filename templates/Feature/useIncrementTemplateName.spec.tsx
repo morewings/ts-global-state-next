@@ -1,6 +1,6 @@
 import {renderHook} from '@testing-library/react';
 
-import * as newState from '@/src/newState';
+import * as newState from '@/src/state';
 
 import {Actions} from './actionTypes';
 import {Provider} from './Provider';
@@ -8,9 +8,9 @@ import {useIncrementTemplateName} from './useIncrementTemplateName';
 
 const dispatchMock = jest.fn();
 
-jest.mock('@/src/newState', () => ({
+jest.mock('@/src/state', () => ({
     __esModule: true,
-    ...jest.requireActual('@/src/newState'),
+    ...jest.requireActual('@/src/state'),
 }));
 
 jest.spyOn(newState, 'useDispatch').mockReturnValue(dispatchMock);
