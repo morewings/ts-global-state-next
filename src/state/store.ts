@@ -1,11 +1,10 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
 
-import {CounterReducer} from '@/src/features/counter';
 import {RandomReducer} from '@/src/features/random';
 
 import {promiseResolverMiddleware} from './promiseResolverMiddleware';
 
-const rootReducer = combineReducers({counter: CounterReducer, random: RandomReducer});
+const rootReducer = combineReducers({random: RandomReducer});
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>;
 

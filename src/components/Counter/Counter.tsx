@@ -7,10 +7,10 @@ import {useCountValue, useIncrementCounter} from '@/src/features/counter';
 
 import classes from './Counter.module.css';
 
-const Counter: FC = () => {
+export const Counter: FC = () => {
     /**
-     *  Get count value from Redux store. We defined selector
-     *  (state => state.counter.value) inside counter feature folder,
+     *  Get count value from Counter store. We defined selector
+     *  (state => state.value) inside counter feature folder,
      *  to make component global state agnostic
      */
     const count = useCountValue();
@@ -25,7 +25,7 @@ const Counter: FC = () => {
                 Increment by one
             </button>
             <div>
-                Total value: <strong>{count}</strong>
+                Total value: <strong title="Total value">{count}</strong>
             </div>
         </div>
     );

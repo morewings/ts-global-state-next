@@ -41,24 +41,27 @@
         },
         "feature": {
             "path": "src/features",
+            "withLazy": false,
+            "withStory": false,
+            "withStyle": false,
             "withActionTypes": true,
+            "withContext": true,
             "withIndex": true,
             "withReadme": true,
-            "withSelectorsTest": true,
-            "withSelectors": true,
-            "withReducerTest": true,
-            "withQueryTest": true,
-            "withquery": true,
+            "withSelector": true,
+            "withTest": true,
+            "withMutation": true,
+            "withMutationTest": true,
             "customTemplates": {
-                "component": "templates/Feature/TemplateNameReducer.ts",
+                "component": "templates/Feature/Reducer.ts",
                 "actionTypes": "templates/Feature/actionTypes.ts",
+                "context": "templates/Feature/Context.tsx",
                 "index": "templates/Feature/index.ts",
                 "readme": "templates/Feature/README.md",
-                "selectorsTest": "templates/Feature/selectors.spec.tsx",
-                "selectors": "templates/Feature/selectors.ts",
-                "reducerTest": "templates/Feature/TemplateNameReducer.spec.tsx",
-                "queryTest": "templates/Feature/useGetTemplateNameQuery.spec.tsx",
-                "query": "templates/Feature/useGetTemplateNameQuery.ts"
+                "selector": "templates/Feature/useTemplateNameValue.ts",
+                "test": "templates/Feature/useTemplateNameValue.spec.tsx",
+                "mutation": "templates/Feature/useIncrementTemplateName.ts",
+                "mutationTest": "templates/Feature/useIncrementTemplateName.spec.tsx"
             }
         },
         "page": {

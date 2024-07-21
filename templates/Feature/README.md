@@ -4,41 +4,32 @@ Tba
 
 ## Selectors
 
-### `useTemplateNameLoadingState`
 
-Returns request loading state from the store. 
+### `useTemplateNameValue`
+
+Returns value from the store
 
 ```javascript
-import {useTemplateNameLoadingState} from 'features/templateName';
+import {useTemplateNameValue} from 'features/templateName';
 
 // Needs to be run from inside React component or other hook.
-const {isLoading, hasError, isFulfilled} = useTemplateNameLoadingState();
+const value = useTemplateName();
 ```
 
-### `useTemplateName`
+## Mutations
 
-Returns random number value from the store
+### `useIncrementTemplateName`
 
-```javascript
-import {useTemplateName} from 'features/templateName';
-
-// Needs to be run from inside React component or other hook.
-const number = useTemplateName();
-```
-
-## Action creators
-
-### `useGetTemplateNameQuery`
-
-Performs AJAX query to get TemplateName.
+Increments `value` by 1
 
 ```javascript
-import {useGetTemplateNameQuery} from 'features/templateName';
+import {useIncrementTemplateName} from 'features/templateName';
 
 // Needs to be run from inside React component or other hook.
-const getTemplateName = useGetTemplateNameQuery();
+const incrementTemplateName = useIncrementTemplateName();
+
 const handleClick = () => {
-  getTemplateName();
+    incrementTemplateName();
 }
 ```
 

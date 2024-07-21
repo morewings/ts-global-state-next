@@ -4,16 +4,16 @@ export type State = {
     value: number;
 };
 
-export const initialState = {
+export const initialState: State = {
     value: 0,
-} as State;
+};
 
 export type Action = {
     type: keyof typeof Actions;
     value: number;
 };
 
-const reducer = (state = initialState, action: Action): State => {
+export const Reducer = (state: State, action: Action): State => {
     switch (action.type) {
         case Actions.INCREMENT_COUNTER: {
             return {...state, value: action.value};
@@ -23,5 +23,3 @@ const reducer = (state = initialState, action: Action): State => {
             return state;
     }
 };
-
-export default reducer;
