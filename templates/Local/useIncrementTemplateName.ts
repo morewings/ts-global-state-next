@@ -3,15 +3,15 @@ import {useCallback} from 'react';
 import {useDispatch} from '@/src/state';
 
 import {Context} from './Context';
-import {useCountValue} from './useCountValue';
+import {useTemplateNameValue} from './useTemplateNameValue';
 import {Actions} from './actionTypes';
 
-export const useIncrementCounter = () => {
+export const useIncrementTemplateName = () => {
     const dispatch = useDispatch(Context);
-    const count = useCountValue();
+    const count = useTemplateNameValue();
     return useCallback(() => {
         dispatch({
-            type: Actions.INCREMENT_COUNTER,
+            type: Actions.INCREMENT_TEMPLATE_NAME,
             value: count + 1,
         });
     }, [count, dispatch]);

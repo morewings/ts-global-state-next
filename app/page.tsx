@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import {Fragment} from 'react';
 
-import Counter from '@/src/components/Counter';
+import {Counter} from '@/src/components/Counter';
 import Random from '@/src/components/Random';
 import {NavHeader} from '@/src/layout/NavHeader';
 

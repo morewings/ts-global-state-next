@@ -1,46 +1,40 @@
 'use client';
 
-import React from 'react';
+import React, {useCallback} from 'react';
 
-import {
-    useGetRandomNumberQuery,
-    useRandomNumber,
-    useLoadingState,
-} from '@/src/features/random';
+import {useRandom} from '@/src/features/random';
 
 import classes from './Random.module.css';
 
 const Random = () => {
     /** Loading state of random.org request from Redux store */
-    const {isLoading, hasError, isFulfilled} = useLoadingState();
-
-    /** Random number value */
-    const number = useRandomNumber();
-
-    /** Create incrementCounter action, using custom hook from feature */
-    const getNumber = useGetRandomNumberQuery();
+    const {isPending, isError, data, isSuccess, refetch, isRefetching} = useRandom();
 
     /** Define pristine state condition, when user didn't do any actions */
-    const isPristine = !isLoading && !hasError && !isFulfilled;
+    const isPristine = !isPending && !isError && !isSuccess;
+
+    const handleClick = useCallback(() => {
+        refetch();
+    }, [refetch]);
 
     return (
         <div className={classes.random}>
             <h2 className={classes.header}>Async Random</h2>
             <button
-                disabled={isLoading}
+                disabled={isPending || isRefetching}
                 className={classes.button}
                 type="button"
-                onClick={getNumber}>
+                onClick={handleClick}>
                 Get random number
             </button>
             {isPristine && <div>Click the button to get random number</div>}
-            {isLoading && <div>Getting number</div>}
-            {isFulfilled && (
+            {isPending && <div>Getting number</div>}
+            {isSuccess && (
                 <div>
-                    Number from random.org: <strong>{number}</strong>
+                    Number from random.org: <strong>{data}</strong>
                 </div>
             )}
-            {hasError && <div>Ups...</div>}
+            {isError && <div>Ups...</div>}
         </div>
     );
 };

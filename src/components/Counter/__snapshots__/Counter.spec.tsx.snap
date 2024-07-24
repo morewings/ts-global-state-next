@@ -18,7 +18,9 @@ exports[`components > Counter renders without crashing 1`] = `
     </button>
     <div>
       Total value: 
-      <strong>
+      <strong
+        title="Total value"
+      >
         6
       </strong>
     </div>

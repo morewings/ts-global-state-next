@@ -39,26 +39,49 @@
                 "test": "templates/Loading/TemplateName.spec.tsx"
             }
         },
-        "feature": {
+        "feature-local": {
             "path": "src/features",
+            "withLazy": false,
+            "withStory": false,
+            "withStyle": false,
             "withActionTypes": true,
+            "withContext": true,
             "withIndex": true,
             "withReadme": true,
-            "withSelectorsTest": true,
-            "withSelectors": true,
-            "withReducerTest": true,
-            "withQueryTest": true,
-            "withquery": true,
+            "withSelector": true,
+            "withTest": true,
+            "withMutation": true,
+            "withMutationTest": true,
             "customTemplates": {
-                "component": "templates/Feature/TemplateNameReducer.ts",
-                "actionTypes": "templates/Feature/actionTypes.ts",
-                "index": "templates/Feature/index.ts",
-                "readme": "templates/Feature/README.md",
-                "selectorsTest": "templates/Feature/selectors.spec.tsx",
-                "selectors": "templates/Feature/selectors.ts",
-                "reducerTest": "templates/Feature/TemplateNameReducer.spec.tsx",
-                "queryTest": "templates/Feature/useGetTemplateNameQuery.spec.tsx",
-                "query": "templates/Feature/useGetTemplateNameQuery.ts"
+                "component": "templates/Local/Reducer.ts",
+                "actionTypes": "templates/Local/actionTypes.ts",
+                "context": "templates/Local/Context.tsx",
+                "index": "templates/Local/index.ts",
+                "readme": "templates/Local/README.md",
+                "selector": "templates/Local/useTemplateNameValue.ts",
+                "test": "templates/Local/useTemplateNameValue.spec.tsx",
+                "mutation": "templates/Local/useIncrementTemplateName.ts",
+                "mutationTest": "templates/Local/useIncrementTemplateName.spec.tsx"
+            }
+        },
+        "feature-connected": {
+            "path": "src/features",
+            "withLazy": false,
+            "withStory": false,
+            "withStyle": false,
+            "withIndex": true,
+            "withReadme": true,
+            "withGetter": true,
+            "withTest": true,
+            "withHook": true,
+            "withHookTest": true,
+            "customTemplates": {
+                "component": "templates/Local/Reducer.ts",
+                "index": "templates/Local/index.ts",
+                "readme": "templates/Local/README.md",
+                "getter": "templates/Connected/getTemplateName.ts",
+                "hook": "templates/Connected/useTemplateName.ts",
+                "hookTest": "templates/Connected/useTemplateName.spec.tsx"
             }
         },
         "page": {
