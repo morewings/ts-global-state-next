@@ -64,10 +64,16 @@ pnpm run generate:component-loading Foo
 Creates React component files for component with dynamically loading content in `./src/components/Foo`. 
 
 ```shell script
-pnpm run generate:feature Foo
+pnpm run generate:feature-local Foo
 ```
 
-Creates reducer, React hooks accessing global state and selectors inside in `./src/features/Foo`. 
+Creates `React.Context` based feature with reducer, Context.Provider, hooks and selectors in `./src/features/Foo`. 
+
+```shell script
+pnpm run generate:feature-connected Foo
+```
+
+Creates `@tanstack/react-query` based feature with global storage, queries, hooks and selectors in `./src/features/Foo`.
 
 ```shell script
 pnpm run generate:page Foo
