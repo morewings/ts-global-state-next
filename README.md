@@ -1,24 +1,24 @@
-[![Deploy to GitHub Pages](https://github.com/morewings/ts-redux-next/actions/workflows/pages.yml/badge.svg)](https://github.com/morewings/ts-redux-next/actions/workflows/pages.yml)
-[![Post-merge tasks](https://github.com/morewings/ts-redux-next/actions/workflows/merge-jobs.yml/badge.svg)](https://github.com/morewings/ts-redux-next/actions/workflows/merge-jobs.yml)
-[![Vercel](https://vercelbadge.vercel.app/api/morewings/ts-redux-next)](https://vercel.com/dima-vyshniakovs-projects/ts-redux-next)
+[![Deploy to GitHub Pages](https://github.com/morewings/ts-global-state-next/actions/workflows/pages.yml/badge.svg)](https://github.com/morewings/ts-global-state-next/actions/workflows/pages.yml)
+[![Post-merge tasks](https://github.com/morewings/ts-global-state-next/actions/workflows/merge-jobs.yml/badge.svg)](https://github.com/morewings/ts-global-state-next/actions/workflows/merge-jobs.yml)
+[![Vercel](https://vercelbadge.vercel.app/api/morewings/ts-global-state-next)](https://vercel.com/dima-vyshniakovs-projects/ts-global-state-next)
 
-# Redux enabled Next template
+# Global state capable Next template
 
 [![TS Redux Next](./design/cover.jpg)](#)
 
-This template is for Next based web applications using Redux store and App Router configuration. This template has tests for React components, reducers, hooks. There is a basic Promise resolver middleware example.
+This template is for Next based web applications using global state and remote data source. The template uses App Router Next.js configuration. This template has tests for React components, reducers, hooks.
 
-Static html deployment: [Github pages](https://morewings.github.io/ts-redux-next/)
+Static html deployment: [Github pages](https://morewings.github.io/ts-global-state-next/)
 
-Full-featured deployment: [Vercel](https://ts-redux-next.vercel.app/)
+Full-featured deployment: [Vercel](https://ts-global-state-next.vercel.app/)
 
 ## Features
 
 - Written **Typescript**.
 - Powered by **Nextjs**.
 - Configured to use **App router**.
-- **Redux** with DevTools support.
-- Promise resolving Redux **middleware example**.
+- Global support using **React.Context** with devtools support.
+- Remote data sources support with **TanStack Query** with devtools support.
 - **Generate** components and features from CLI.
 - **pnpm** for fast package management.
 - **Husky** for git hooks.
@@ -40,9 +40,9 @@ Manually clone repo or use `degit`.
 
 ```shell script
 # With CSS Modules config
-npx degit github:morewings/ts-redux-next my-app
+npx degit github:morewings/ts-global-state-next my-app
 # With Styled Components config
-npx degit github:morewings/ts-redux-next#styled-components my-app
+npx degit github:morewings/ts-global-state-next#styled-components my-app
 cd ./my-app
 pnpm i
 ```
@@ -77,11 +77,11 @@ Creates Next App router compatible page in `./app/Foo` folder.
 
 ## Enable Styled components
 
-You can find all changes inside this [PR](https://github.com/morewings/ts-redux-next/pull/40) and [styled-components](https://github.com/morewings/ts-redux-next/tree/styled-components) branch.
+You can find all changes inside this [PR](https://github.com/morewings/ts-global-state-next/pull/40) and [styled-components](https://github.com/morewings/ts-global-state-next/tree/styled-components) branch.
 
 ## Previous implementations
 
-[cra-template-quickstart-redux](https://github.com/morewings/cra-template-quickstart-redux)
+[cra-template-no-redux](https://github.com/morewings/cra-template-no-redux)
 
 [react-template](https://github.com/morewings/react-template)
 
