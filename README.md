@@ -4,7 +4,7 @@
 
 # Global state capable Next template
 
-[![TS Redux Next](./design/cover.jpg)](#)
+[![TS Redux Next](./design/github.jpg)](#)
 
 This template is for Next based web applications using global state and remote data source. The template uses App Router Next.js configuration. This template has tests for React components, reducers, hooks.
 
