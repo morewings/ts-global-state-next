@@ -3,6 +3,8 @@
 import type {FC, ReactNode} from 'react';
 import {useReducer, useMemo} from 'react';
 
+import {useReduxDevtools} from '@/src/state';
+
 import type {State} from './Reducer';
 import {Reducer, initialState as initialStateFromReducer} from './Reducer';
 import {Context} from './Context';
@@ -18,6 +20,11 @@ export const Provider: FC<ProviderProps> = ({
 }) => {
     const {Provider} = Context;
     const [state, dispatch] = useReducer(Reducer, initialState);
-    const store = useMemo(() => ({state, dispatch}), [state]);
+    // set up Redux devtools (optional)
+    const wrappedDispatch = useReduxDevtools(state, dispatch);
+    const store = useMemo(
+        () => ({state, dispatch: wrappedDispatch}),
+        [state, wrappedDispatch]
+    );
     return <Provider value={store}>{children}</Provider>;
 };

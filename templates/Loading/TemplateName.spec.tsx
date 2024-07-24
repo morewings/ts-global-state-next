@@ -8,7 +8,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
 import {getRandom} from '@/src/features/random/getRandom';
 
-import TemplateName from './TemplateName';
+import {TemplateName} from './TemplateName';
 
 jest.mock('@/src/features/random/getRandom', () => ({
     __esModule: true,

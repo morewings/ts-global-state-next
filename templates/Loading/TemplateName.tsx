@@ -18,8 +18,8 @@ export const TemplateName = () => {
     }, [refetch]);
 
     return (
-        <div className={classes.templateName}>
-            <h2 className={classes.header}>Async TemplateName</h2>
+        <div className={classes.random}>
+            <h2 className={classes.header}>Async Random</h2>
             <button
                 disabled={isPending || isRefetching}
                 className={classes.button}
@@ -38,5 +38,3 @@ export const TemplateName = () => {
         </div>
     );
 };
-
-export default TemplateName;

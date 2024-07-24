@@ -5,6 +5,6 @@ import {CounterProvider} from '@/src/features/counter';
 const queryClient = new QueryClient();
 
 export const providerConfig = [
-    CounterProvider,
     [QueryClientProvider, {client: queryClient}],
+    CounterProvider,
 ];
