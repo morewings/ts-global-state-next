@@ -11,5 +11,5 @@ module.exports = withBundleAnalyzer({
     distDir: 'build',
     output: process.env.PAGES_BUILD === 'true' ? 'export' : undefined,
     cleanDistDir: true,
-    basePath: process.env.PAGES_BUILD === 'true' ? '/ts-redux-next' : undefined,
+    basePath: process.env.PAGES_BUILD === 'true' ? '/ts-global-state-next' : undefined,
 });
