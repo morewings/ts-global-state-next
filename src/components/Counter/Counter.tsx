@@ -30,5 +30,3 @@ export const Counter: FC = () => {
         </div>
     );
 };
-
-export default Counter;

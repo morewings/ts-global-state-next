@@ -6,7 +6,8 @@
 
 [![TS Redux Next](./design/github.jpg)](#)
 
-This template is for Next based web applications using global state and remote data source. The template uses App Router Next.js configuration. This template has tests for React components, reducers, hooks.
+Global state Next template (GSN) is designed for Next.js-based web applications utilizing global state and remote data sources. It includes the App Router configuration of Next.js and tests for React components, reducers, and hooks.
+
 
 Static html deployment: [Github pages](https://morewings.github.io/ts-global-state-next/)
 
@@ -49,7 +50,7 @@ pnpm i
 
 ## Generate components and features
 
-Template uses [generate-react-cli](https://www.npmjs.com/package/generate-react-cli). Templates are located at `./templates` folder.
+Template uses [generate-react-cli](https://www.npmjs.com/package/generate-react-cli). Templates are located at `./templates` directory.
 
 ```shell script
 pnpm run generate:component Foo
@@ -79,15 +80,19 @@ Creates `@tanstack/react-query` based feature with global storage, queries, hook
 pnpm run generate:page Foo
 ```
 
-Creates Next App router compatible page in `./app/Foo` folder.
+Creates Next App router compatible page in `./app/Foo` directory.
 
 ## Enable Styled components
 
-You can find all changes inside this [PR](https://github.com/morewings/ts-global-state-next/pull/40) and [styled-components](https://github.com/morewings/ts-global-state-next/tree/styled-components) branch.
+Refer to this [PR](https://github.com/morewings/ts-global-state-next/pull/40) and [styled-components](https://github.com/morewings/ts-global-state-next/tree/styled-components) branch for all necessary changes.
 
 ## Previous implementations
 
 [cra-template-no-redux](https://github.com/morewings/cra-template-no-redux)
 
 [react-template](https://github.com/morewings/react-template)
+
+## Acknowledgements
+
+Cover frame image by [GDJ](https://pixabay.com/users/gdj-1086657/).
 

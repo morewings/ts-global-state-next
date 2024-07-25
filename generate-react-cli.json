@@ -66,6 +66,7 @@
         },
         "feature-connected": {
             "path": "src/features",
+            "withComponent": false,
             "withLazy": false,
             "withStory": false,
             "withStyle": false,
@@ -76,9 +77,8 @@
             "withHook": true,
             "withHookTest": true,
             "customTemplates": {
-                "component": "templates/Local/Reducer.ts",
-                "index": "templates/Local/index.ts",
-                "readme": "templates/Local/README.md",
+                "index": "templates/Connected/index.ts",
+                "readme": "templates/Connected/README.md",
                 "getter": "templates/Connected/getTemplateName.ts",
                 "hook": "templates/Connected/useTemplateName.ts",
                 "hookTest": "templates/Connected/useTemplateName.spec.tsx"

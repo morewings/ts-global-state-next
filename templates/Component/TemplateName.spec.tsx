@@ -1,86 +1,54 @@
 import React from 'react';
-import {Provider} from 'react-redux';
 import {render, fireEvent} from '@testing-library/react';
-import configureStore from 'redux-mock-store';
 
-import {Actions} from '@/src/features/counter/actionTypes';
+import {CounterProvider, CounterActions} from '@/src/features/counter';
+import * as newState from '@/src/state';
 
 import {TemplateName} from './TemplateName';
 
+const dispatchMock = jest.fn();
+
+jest.mock('@/src/state', () => ({
+    __esModule: true,
+    ...jest.requireActual('@/src/state'),
+}));
+
+jest.spyOn(newState, 'useDispatch').mockReturnValue(dispatchMock);
+
 describe('components > TemplateName', () => {
-    /** Create mock store with the count value */
-    const mockStore = configureStore([]);
-    const store = mockStore({
-        counter: {
-            value: 6,
-        },
-    });
+    const initialState = {
+        value: 6 as const,
+    };
 
-    /**
-     * Add spy to watch for store.dispatch method.
-     * @see https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname
-     */
-    jest.spyOn(store, 'dispatch');
-
-    /**
-     * Jest hook which runs before each test,
-     * @see https://jestjs.io/docs/en/api#beforeeachfn-timeout
-     */
     beforeEach(() => {
-        /**
-         * Clear any saved mock data from previous tests,
-         * because jest saves calls data for spies and mocks.
-         * @see https://jestjs.io/docs/en/mock-function-api#mockfnmockclear
-         */
-        // @ts-expect-error TS2339: Property mockClear does not exist on type
-        store.dispatch.mockClear();
+        dispatchMock.mockClear();
     });
 
     it('renders without crashing', () => {
-        /**
-         * `asFragment`:
-         * @see https://testing-library.com/docs/react-testing-library/api#asfragment
-         * `qetByText`:
-         * @see https://testing-library.com/docs/dom-testing-library/api-queries#bytext
-         * `wrapper`
-         * @see https://testing-library.com/docs/react-testing-library/api#wrapper
-         */
         const {asFragment, getByText} = render(<TemplateName />, {
-            wrapper: ({children}) => <Provider store={store}>{children}</Provider>,
+            wrapper: ({children}) => (
+                <CounterProvider initialState={initialState}>{children}</CounterProvider>
+            ),
         });
 
-        /**
-         * Basic snapshot test to make sure, that rendered component
-         * matches expected footprint.
-         */
         expect(asFragment()).toMatchSnapshot();
 
-        /** More precise test for counter value */
-        expect(getByText(/6/i).textContent).toBe('6'); // 6 is value we expect, we need to convert Number to String, because HTMLElement textContent method returns string value
+        expect(getByText(initialState.value)).toBeInTheDocument();
     });
 
-    it('dispatches an action on button click', () => {
-        /**
-         * `getByRole`:
-         * @see https://testing-library.com/docs/dom-testing-library/api-queries#byrole
-         */
+    it('dispatches an action on button click', async () => {
         const {getByRole} = render(<TemplateName />, {
-            wrapper: ({children}) => <Provider store={store}>{children}</Provider>,
+            wrapper: ({children}) => (
+                <CounterProvider initialState={initialState}>{children}</CounterProvider>
+            ),
         });
 
-        /**
-         * Search for the button and make testing library click on it
-         * @see https://testing-library.com/docs/react-testing-library/cheatsheet#events
-         */
         fireEvent.click(getByRole('button'));
 
-        /** Check if store.dispatch method was run */
-        expect(store.dispatch).toHaveBeenCalledTimes(1);
-
-        /** Check if store.dispatch was run with correct action */
-        expect(store.dispatch).toHaveBeenCalledWith({
-            type: Actions.INCREMENT_COUNTER,
-            value: 7,
+        expect(dispatchMock).toHaveBeenCalledTimes(1);
+        expect(dispatchMock.mock.calls[0][0]).toEqual({
+            type: CounterActions.INCREMENT_COUNTER,
+            value: initialState.value + 1,
         });
     });
 });
