@@ -15,10 +15,9 @@ Full-featured deployment: [Vercel](https://ts-global-state-next.vercel.app/)
 
 ## Features
 
-- Written **Typescript**.
-- Powered by **Nextjs**.
-- Configured to use **App router**.
-- Global support using **React.Context** with devtools support.
+- Written in **Typescript**.
+- Powered by **Nextjs**. Configured to use **App router**.
+- Global state support using **React.Context** with devtools support.
 - Remote data sources support with **TanStack Query** with devtools support.
 - **Generate** components and features from CLI.
 - **pnpm** for fast package management.
