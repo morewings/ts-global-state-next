@@ -16,7 +16,7 @@
         "build": "next build",
         "analyze:build": "ANALYZE=true run-s build",
         "start": "next start",
-        "lint:code": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+        "lint:code": "eslint src/** --report-unused-disable-directives",
         "fix:code": "run-s 'lint:code --fix'",
         "lint:style": "stylelint 'src/**/*.css'",
         "fix:style": "stylelint 'src/**/*.css' --fix",
