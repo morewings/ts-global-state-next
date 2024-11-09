@@ -53,7 +53,7 @@
         "@types/uniqid": "5.3.4",
         "@typescript-eslint/eslint-plugin": "8.3.0",
         "@typescript-eslint/parser": "8.3.0",
-        "alias-hq": "6.2.3",
+        "alias-hq": "6.2.4",
         "eslint": "8.57.1",
         "eslint-config-next": "14.2.7",
         "eslint-config-prettier": "9.1.0",
