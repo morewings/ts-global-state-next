@@ -93,6 +93,9 @@ importers:
       eslint-plugin-prettier:
         specifier: 5.2.3
         version: 5.2.3(@types/eslint@8.56.10)(eslint-config-prettier@10.0.1(eslint@9.19.0))(eslint@9.19.0)(prettier@3.4.2)
+      eslint-plugin-react-hooks:
+        specifier: 5.2.0
+        version: 5.2.0(eslint@9.19.0)
       generate-react-cli:
         specifier: 8.4.9
         version: 8.4.9
@@ -2577,8 +2580,8 @@ packages:
       eslint-config-prettier:
         optional: true
 
-  eslint-plugin-react-hooks@5.1.0:
-    resolution: {integrity: sha512-mpJRtPgHN2tNAvZ35AMfqeB3Xqeo273QxrHJsbBEPWODRM4r0yB6jfoROqKEYrOn27UtRPpcpHc2UqyBSuUNTw==}
+  eslint-plugin-react-hooks@5.2.0:
+    resolution: {integrity: sha512-+f15FfK64YQwZdJNELETdn5ibXEUQmW1DZL6KXhNnc2heoy/sg9VJJeT7n8TlMWouzWqSWavFkIhHyIbIAEapg==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -7842,7 +7845,7 @@ snapshots:
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.22.0(eslint@9.19.0)(typescript@5.7.2))(eslint-import-resolver-typescript@3.5.3)(eslint@9.19.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.19.0)
       eslint-plugin-react: 7.37.4(eslint@9.19.0)
-      eslint-plugin-react-hooks: 5.1.0(eslint@9.19.0)
+      eslint-plugin-react-hooks: 5.2.0(eslint@9.19.0)
     optionalDependencies:
       typescript: 5.7.2
     transitivePeerDependencies:
@@ -7944,7 +7947,7 @@ snapshots:
       '@types/eslint': 8.56.10
       eslint-config-prettier: 10.0.1(eslint@9.19.0)
 
-  eslint-plugin-react-hooks@5.1.0(eslint@9.19.0):
+  eslint-plugin-react-hooks@5.2.0(eslint@9.19.0):
     dependencies:
       eslint: 9.19.0
 
