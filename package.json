@@ -58,7 +58,7 @@
         "alias-hq": "6.2.4",
         "eslint": "9.19.0",
         "eslint-config-next": "15.3.3",
-        "eslint-config-prettier": "10.0.1",
+        "eslint-config-prettier": "10.1.8",
         "eslint-plugin-prettier": "5.4.0",
         "eslint-plugin-react-hooks": "5.2.0",
         "generate-react-cli": "8.4.9",
